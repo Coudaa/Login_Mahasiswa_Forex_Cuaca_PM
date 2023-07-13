@@ -7,12 +7,13 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.cuaca.CuacaMainActivity;
 import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.forex.ForexMainActivity;
 import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.mahasiswa.TampilMahasiswaActivity;
 
 public class MenuActivity extends AppCompatActivity {
-    private Button _tampilMahasiswaButton, _tampilForexButton;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent;
+    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         initTampilMahasiswaButton();
         initTampilForexButton();
+        initTampilCuacaButton();
     }
     private void initTampilMahasiswaButton(){
         _tampilMahasiswaButton = findViewById(R.id.tampilMahasiswaButton);
@@ -43,4 +45,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void initTampilCuacaButton(){
+        _tampilCuacaButton = findViewById(R.id.tampilCuacaButton);
+        _tampilCuacaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _tampilCuacaIntent = new Intent(getApplicationContext(), CuacaMainActivity.class);
+                startActivity(_tampilCuacaIntent);
+            }
+        });
+    }
+
 }

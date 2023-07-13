@@ -13,11 +13,17 @@
         android:theme="@style/Theme.Login_Mahasiswa_Forex_Cuaca"
         tools:targetApi="31">
         <activity
+            android:name=".cuaca.CuacaMainActivity"
+            android:exported="false"
+            android:label="Cuaca Pontianak"/>
+        <activity
             android:name=".forex.ForexMainActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Forex"/>
         <activity
             android:name=".mahasiswa.TampilMahasiswaActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Mahasiswa"/>
         <activity
             android:name=".mahasiswa.AddMahasiswaActivity"
             android:exported="false" />
