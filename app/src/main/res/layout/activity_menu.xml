@@ -34,4 +34,13 @@
         android:textColor="#fff"
         android:text="Cuaca"
         android:id="@+id/tampilCuacaButton"></Button>
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_columnWeight="1"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/baseline_local_phone_24"
+        android:textColor="#fff"
+        android:text="Intent"
+        android:id="@+id/tampilIntentButton"></Button>
 </GridLayout>

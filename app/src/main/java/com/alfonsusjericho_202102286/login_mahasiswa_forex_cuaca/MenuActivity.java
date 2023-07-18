@@ -9,19 +9,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.cuaca.CuacaMainActivity;
 import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.forex.ForexMainActivity;
+import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.intent.IntentMainActivity;
 import com.alfonsusjericho_202102286.login_mahasiswa_forex_cuaca.mahasiswa.TampilMahasiswaActivity;
 
 public class MenuActivity extends AppCompatActivity {
-    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton;
-    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent;
+
+    public static final String EXTRA_NAME = "p";
+    private Button _tampilMahasiswaButton, _tampilForexButton, _tampilCuacaButton, _tampilIntentButton;
+    private Intent _tampilMahasiswaIntent, _tampilForexIntent, _tampilCuacaIntent, _tampilIntentIntent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String name = getIntent().getStringExtra(EXTRA_NAME);
+        setTitle("Halo - " + name);
+
         setContentView(R.layout.activity_menu);
         initTampilMahasiswaButton();
         initTampilForexButton();
         initTampilCuacaButton();
+        initTampilIntentButton();
     }
     private void initTampilMahasiswaButton(){
         _tampilMahasiswaButton = findViewById(R.id.tampilMahasiswaButton);
@@ -56,5 +64,16 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
     }
+    private void initTampilIntentButton(){
+        _tampilIntentButton = findViewById(R.id.tampilIntentButton);
+        _tampilIntentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _tampilIntentIntent = new Intent(getApplicationContext(), IntentMainActivity.class);
+                startActivity(_tampilIntentIntent);
+            }
+        });
+    }
+
 
 }

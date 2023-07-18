@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Selamat datang, " + _id, Toast.LENGTH_SHORT).show();
 
                         _menuIntent = new Intent(getApplicationContext(), MenuActivity.class);
+                        _menuIntent.putExtra(MenuActivity.EXTRA_NAME, _id);
                         startActivity(_menuIntent);
                     }
 
